@@ -1,0 +1,16 @@
+<ul class="selection">
+  {{#each list as |item|}}
+  <li>
+    {{#chared-option name=name value=item.id binding=binding requires=item.requires tags=tags select=select hover=hover}}
+    {{#if item.cost}}
+    <span class="cost {{item.cost_type}}">{{item.cost}}</span>
+    {{/if}}
+    {{#if female}}
+    {{item.name_female}}
+    {{else}}
+    {{item.name}}
+    {{/if}}
+    {{/chared-option}}
+  </li>
+  {{/each}}
+</ul>

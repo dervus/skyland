@@ -1,0 +1,27 @@
+<div class="form-main {{class}}">
+  <div class="form-header">
+    {{title}}
+  </div>
+  <div class="form-inputs">
+    {{yield}}
+  </div>
+  <div class="form-info">
+    <div>
+      {{#if info}}
+      <div class="name">
+        {{info.name}}
+      </div>
+      {{#if info.desc}}
+      <div class="description">
+        {{info.desc}}
+      </div>
+      {{/if}}
+      {{#if info.preview}}
+      <div class="preview">
+        <video muted autoplay loop src="{{info.preview}}"></video>
+      </div>
+      {{/if}}
+      {{/if}}
+    </div>
+  </div>
+</div>

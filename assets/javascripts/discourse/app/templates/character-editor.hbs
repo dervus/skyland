@@ -1,0 +1,67 @@
+<section class="character-editor">
+  <h1>{{i18n "skyland.character_editor.title_edit"}}</h1>
+
+  {{#chared-section id="role" title=(i18n "skyland.character_editor.role") info=roleinfo}}
+  {{#each blocks as |block|}}
+  <h3>{{block.name}}</h3>
+  <small>{{block.info}}</small>
+  {{chared-option-list name="role" list=block.roles binding=character.role select=(action "select") hover=(action "hover")}}
+  {{/each}}
+  {{/chared-section}}
+
+  {{#chared-section class="location" title=(i18n "skyland.character_editor.location") info=locationinfo}}
+  {{chared-option-list name="location" list=locationlist binding=character.location female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="gender" title=(i18n "skyland.character_editor.gender")}}
+  <ul class="selection gender-selection">
+    <li>
+      {{#chared-option name="gender" value="male" binding=character.gender select=(action "select")}}♂{{/chared-option}}
+    </li>
+    <li>
+      {{#chared-option name="gender" value="female" binding=character.gender select=(action "select")}}♀{{/chared-option}}
+    </li>
+  </ul>
+  {{/chared-section}}
+
+  {{#chared-section class="race" title=(i18n "skyland.character_editor.race") info=raceinfo}}
+  {{chared-option-list name="race" list=racelist binding=character.race female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="class" title=(i18n "skyland.character_editor.class") info=classinfo}}
+  {{chared-option-list name="class" list=classlist binding=character.class female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="armor" title=(i18n "skyland.character_editor.armor") info=armorinfo}}
+  {{chared-option-list name="armor" list=armorlist binding=character.armor female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="weapon" title=(i18n "skyland.character_editor.weapon") info=weaponinfo}}
+  {{chared-option-list name="weapon" list=weaponlist binding=character.weapon female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="trait" title=(i18n "skyland.character_editor.traits") info=traitinfo}}
+  {{chared-option-list name="trait" list=traitlist binding=character.traits female=female tags=tags select=(action "select") hover=(action "hover")}}
+  {{/chared-section}}
+
+  {{#chared-section class="name name_extra" title=(i18n "skyland.character_editor.rest")}}
+  {{input value=character.name placeholder=(i18n "skyland.character_editor.name")}}
+  {{input value=character.name_extra placeholder=(i18n "skyland.character_editor.name_extra")}}
+  {{#chared-section class="info" title=(i18n "skyland.character_editor.rest")}}
+  {{/chared-section}}
+  <h4>{{i18n "skyland.character_editor.info"}}</h4>
+  <small>{{i18n "skyland.character_editor.info_tip"}}</small>
+  {{d-textarea value=character.info}}
+  {{/chared-section}}
+
+  {{#chared-section title="Debug"}}
+  <pre>{{formDebug}}</pre>
+  <pre>{{tagsDebug}}</pre>
+  {{/chared-section}}
+
+  <div class="form-controls">
+    {{#d-button class="btn btn-large btn-primary" action=(action "submit")}}
+    {{i18n "skyland.character_editor.submit"}}
+    {{/d-button}}
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<section class="character-list">
+  <h1>{{i18n "skyland.character_list.title"}}</h1>
+
+  <div>
+    Игровая учётная запись:
+    {{#if account}}
+    {{account.username}}
+    {{else}}
+    НЕ СОЗДАНА
+    {{/if}}
+  </div>
+
+  <nav>
+    <ul>
+      <li>{{d-button icon="plus" label="skyland.account.edit" action=(action "upsertAccount")}}</li>
+      <li>{{d-button icon="plus" label="skyland.character_list.new" href="/skyland/characters/new"}}</li>
+    </ul>
+  </nav>
+
+  {{#if items.mine}}
+  <ul class="list">
+    {{#each items.mine as |character|}}
+    <li>
+      {{character.name}}
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <div class="message">
+    {{i18n "skyland.character_list.empty"}}
+  </div>
+  {{/if}}
+
+  {{#if items.other}}
+  <ul class="list">
+    {{#each items.other as |character|}}
+    <li>
+      {{character.name}}
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</section>

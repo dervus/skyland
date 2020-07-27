@@ -1,0 +1,19 @@
+{{#d-modal-body}}
+<table>
+  <tbody>
+    <tr>
+      <td><label for="skyland-account-username">{{i18n "skyland.account.username"}}</label></td>
+      <td>{{text-field value=model.username id="skyland-account-username" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}</td>
+    </tr>
+    <tr>
+      <td><label for="skyland-account-password">{{i18n "skyland.account.password"}}</label></td>
+      <td>{{password-field value=model.password type="password" id="skyland-account-password" maxlength="16"}}</td>
+    </tr>
+  </tbody>
+  <div>
+    {{#d-button class="btn btn-large btn-primary" action=(action "submit")}}
+    {{i18n "skyland.account.submit"}}
+    {{/d-button}}
+  </div>
+</table>
+{{/d-modal-body}}

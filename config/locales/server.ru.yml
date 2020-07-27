@@ -1,0 +1,5 @@
+ru:
+  site_settings:
+    skyland_enabled: Включить Skyland-плагин
+    skyland_terra_api: Адрес Terra-сервера для работы с персонажами
+    skyland_assets_path: Путь к статическим ресурсам Terra-сервера

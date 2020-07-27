@@ -1,0 +1,10 @@
+plugins:
+  skyland_enabled:
+    default: true
+    client: true
+  skyland_terra_api:
+    default: "http://localhost:8000"
+    client: false
+  skyland_assets_path:
+    default: "/plugins/skyland/assets/"
+    client: true
